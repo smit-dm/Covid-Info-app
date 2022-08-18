@@ -23,35 +23,39 @@ class ViewController: UIViewController {
     var worldRecovered  : Int = 0;
     var worldDeaths : Int = 0;
     var data = DataLoader().userData
+    var deathRatio = 0.0
+    var recoveryRatio = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getData()
-        txtTotal.text = String(worldTotal)
-        txtRecovered.text = String(worldRecovered)
-        txtDeaths.text = String(worldDeaths)
+        logo.CircleImg()
+        txtDeaths.Rounded()
+        txtTotal.Rounded()
+        txtRecovered.Rounded()
+        percent1.Rounded()
+        info.Rounded()
+        percent2.Rounded()
     }
     
     
     
     func getData()
     {
-        for value in data {
+        for value in data
+        {
             worldTotal = value.totalConfirmed
             worldRecovered = value.totalRecovered  ?? 0
             worldDeaths = value.totalDeaths  ?? 0
-            for something in value.areas {
-//                 worldTotal = something.totalConfirmed
-//                 worldRecovered = something.totalRecovered
-//                 worldDeaths = something.totalDeaths
-//                print(something.totalConfirmed)
-                for nothing in something.areas {
-                    for idk in nothing.areas where idk.totalConfirmed > 100 {
-                        print("Works")
-                    }
-                }
-            }
+            deathRatio = Double(Double(worldDeaths) * 100 / Double(worldTotal))
+            recoveryRatio = Double(Double(worldRecovered) * 100 / Double(worldTotal))
+            percent1.text = "Recovery rate \n \(String(format: "%.2f", recoveryRatio))%"
+            percent2.text = "Death rate \n \(String(format: "%.2f", deathRatio))%"
+            txtTotal.text = "Total \n \(String(worldTotal))"
+            txtRecovered.text = "Recovered \n \(String(worldRecovered))"
+            txtDeaths.text = "Deaths \n \(String(worldDeaths))"
         }
     }
 

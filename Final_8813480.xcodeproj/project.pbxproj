@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB13E24D28AECB53001C3A35 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = AB13E24C28AECB53001C3A35 /* data.json */; };
+		ABDD7CB428AED54B005857A9 /* changeShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD7CB328AED54B005857A9 /* changeShapes.swift */; };
 		ABF8458B28AD98FD003480DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8458A28AD98FD003480DB /* AppDelegate.swift */; };
 		ABF8458D28AD98FD003480DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8458C28AD98FD003480DB /* SceneDelegate.swift */; };
 		ABF8458F28AD98FD003480DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8458E28AD98FD003480DB /* ViewController.swift */; };
@@ -17,7 +19,6 @@
 		ABF845A528AD9900003480DB /* Final_8813480Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF845A428AD9900003480DB /* Final_8813480Tests.swift */; };
 		ABF845AF28AD9900003480DB /* Final_8813480UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF845AE28AD9900003480DB /* Final_8813480UITests.swift */; };
 		ABF845B128AD9900003480DB /* Final_8813480UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF845B028AD9900003480DB /* Final_8813480UITestsLaunchTests.swift */; };
-		ABF845BE28AD991C003480DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = ABF845BD28AD991C003480DB /* data.json */; };
 		ABF845C028AD9971003480DB /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF845BF28AD9971003480DB /* DataLoader.swift */; };
 		ABF845C228ADB405003480DB /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF845C128ADB405003480DB /* userData.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB13E24C28AECB53001C3A35 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../../Desktop/Yash/iosfinal/data.json; sourceTree = "<group>"; };
+		ABDD7CB328AED54B005857A9 /* changeShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeShapes.swift; sourceTree = "<group>"; };
 		ABF8458728AD98FD003480DB /* Final_8813480.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_8813480.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF8458A28AD98FD003480DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABF8458C28AD98FD003480DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		ABF845AA28AD9900003480DB /* Final_8813480UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Final_8813480UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF845AE28AD9900003480DB /* Final_8813480UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final_8813480UITests.swift; sourceTree = "<group>"; };
 		ABF845B028AD9900003480DB /* Final_8813480UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final_8813480UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ABF845BD28AD991C003480DB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../Desktop/Yash/iosfinal/data.json; sourceTree = "<group>"; };
 		ABF845BF28AD9971003480DB /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		ABF845C128ADB405003480DB /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,10 +109,11 @@
 		ABF8458928AD98FD003480DB /* Final_8813480 */ = {
 			isa = PBXGroup;
 			children = (
-				ABF845BD28AD991C003480DB /* data.json */,
+				AB13E24C28AECB53001C3A35 /* data.json */,
 				ABF8458A28AD98FD003480DB /* AppDelegate.swift */,
 				ABF8458C28AD98FD003480DB /* SceneDelegate.swift */,
 				ABF8458E28AD98FD003480DB /* ViewController.swift */,
+				ABDD7CB328AED54B005857A9 /* changeShapes.swift */,
 				ABF845BF28AD9971003480DB /* DataLoader.swift */,
 				ABF845C128ADB405003480DB /* userData.swift */,
 				ABF8459028AD98FD003480DB /* Main.storyboard */,
@@ -244,9 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABF8459A28AD9900003480DB /* LaunchScreen.storyboard in Resources */,
-				ABF845BE28AD991C003480DB /* data.json in Resources */,
 				ABF8459728AD9900003480DB /* Assets.xcassets in Resources */,
 				ABF8459228AD98FD003480DB /* Main.storyboard in Resources */,
+				AB13E24D28AECB53001C3A35 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +279,7 @@
 				ABF845C228ADB405003480DB /* userData.swift in Sources */,
 				ABF8458B28AD98FD003480DB /* AppDelegate.swift in Sources */,
 				ABF8458D28AD98FD003480DB /* SceneDelegate.swift in Sources */,
+				ABDD7CB428AED54B005857A9 /* changeShapes.swift in Sources */,
 				ABF8459528AD98FD003480DB /* Final_8813480.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
