@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB058F4F28AEF7F400EF1AF2 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB058F4E28AEF7F400EF1AF2 /* InstructionsViewController.swift */; };
+		AB058F5128AEF81100EF1AF2 /* AssesmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB058F5028AEF81100EF1AF2 /* AssesmentViewController.swift */; };
 		AB13E24D28AECB53001C3A35 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = AB13E24C28AECB53001C3A35 /* data.json */; };
 		ABDD7CB428AED54B005857A9 /* changeShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD7CB328AED54B005857A9 /* changeShapes.swift */; };
 		ABF8458B28AD98FD003480DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8458A28AD98FD003480DB /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB058F4E28AEF7F400EF1AF2 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		AB058F5028AEF81100EF1AF2 /* AssesmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentViewController.swift; sourceTree = "<group>"; };
 		AB13E24C28AECB53001C3A35 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../../../../Desktop/Yash/iosfinal/data.json; sourceTree = "<group>"; };
 		ABDD7CB328AED54B005857A9 /* changeShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeShapes.swift; sourceTree = "<group>"; };
 		ABF8458728AD98FD003480DB /* Final_8813480.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_8813480.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,8 @@
 				ABDD7CB328AED54B005857A9 /* changeShapes.swift */,
 				ABF845BF28AD9971003480DB /* DataLoader.swift */,
 				ABF845C128ADB405003480DB /* userData.swift */,
+				AB058F4E28AEF7F400EF1AF2 /* InstructionsViewController.swift */,
+				AB058F5028AEF81100EF1AF2 /* AssesmentViewController.swift */,
 				ABF8459028AD98FD003480DB /* Main.storyboard */,
 				ABF8459628AD9900003480DB /* Assets.xcassets */,
 				ABF8459828AD9900003480DB /* LaunchScreen.storyboard */,
@@ -275,11 +281,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABF845C028AD9971003480DB /* DataLoader.swift in Sources */,
+				AB058F5128AEF81100EF1AF2 /* AssesmentViewController.swift in Sources */,
 				ABF8458F28AD98FD003480DB /* ViewController.swift in Sources */,
 				ABF845C228ADB405003480DB /* userData.swift in Sources */,
 				ABF8458B28AD98FD003480DB /* AppDelegate.swift in Sources */,
 				ABF8458D28AD98FD003480DB /* SceneDelegate.swift in Sources */,
 				ABDD7CB428AED54B005857A9 /* changeShapes.swift in Sources */,
+				AB058F4F28AEF7F400EF1AF2 /* InstructionsViewController.swift in Sources */,
 				ABF8459528AD98FD003480DB /* Final_8813480.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

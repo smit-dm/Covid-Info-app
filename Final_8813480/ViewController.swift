@@ -38,17 +38,21 @@ class ViewController: UIViewController {
         percent1.Rounded()
         info.Rounded()
         percent2.Rounded()
+       
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     
     func getData()
     {
-        for value in data
+        for global in data
         {
-            worldTotal = value.totalConfirmed
-            worldRecovered = value.totalRecovered  ?? 0
-            worldDeaths = value.totalDeaths  ?? 0
+            worldTotal = global.totalConfirmed
+            worldRecovered = global.totalRecovered  ?? 0
+            worldDeaths = global.totalDeaths  ?? 0
             deathRatio = Double(Double(worldDeaths) * 100 / Double(worldTotal))
             recoveryRatio = Double(Double(worldRecovered) * 100 / Double(worldTotal))
             percent1.text = "Recovery rate \n \(String(format: "%.2f", recoveryRatio))%"
@@ -56,8 +60,13 @@ class ViewController: UIViewController {
             txtTotal.text = "Total \n \(String(worldTotal))"
             txtRecovered.text = "Recovered \n \(String(worldRecovered))"
             txtDeaths.text = "Deaths \n \(String(worldDeaths))"
+            for country in global.areas
+            {
+                print(country.id)
+            }
         }
     }
+    
 
    //
 }
