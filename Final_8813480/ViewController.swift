@@ -25,6 +25,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var logo: UIImageView!
     
     //Initializing Variables
+    var totalRecovered = PieChartDataEntry(value: 0)
+    var totalDeath = PieChartDataEntry(value: 0)
+    var inRecovery = PieChartDataEntry(value: 0)
+    var totalConfirmed = [PieChartDataEntry]()
     var worldTotal : Int = 0;
     var worldRecovered  : Int = 0;
     var worldDeaths : Int = 0;
@@ -52,6 +56,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         percent1.Rounded()
         info.RoundedView()
         percent2.Rounded()
+        //Chart data
+//        pieCharts.chartDescription?.text = ""
+        totalRecovered.value = Double(worldRecovered)
+        totalRecovered.label = "Recovered"
+        totalDeath.value = Double(worldDeaths)
+        totalDeath.label = "Deaths"
+        inRecovery.value = Double(worldTotal - worldRecovered - worldDeaths)
+        inRecovery.label = "In Recovery"
+        totalConfirmed = [totalRecovered,totalDeath,inRecovery]
+        pieCharts.layer.borderWidth = 5
+        updateChartData()
+        
+        
     }
     
     //Creating Location Manager
@@ -122,6 +139,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    func updateChartData(){
+        let chartDataSet = PieChartDataSet(entries: totalConfirmed,label: nil)
+        let chartData = PieChartData(dataSet: chartDataSet)
+       //let colors = [UIColor(named: "red"), UIColor(named: "blue")]
+        chartDataSet.colors = [.green, .blue , .red]
+      pieCharts.data = chartData
+    }
 
    //
 }
