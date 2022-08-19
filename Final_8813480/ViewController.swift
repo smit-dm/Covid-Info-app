@@ -10,11 +10,11 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var info: UITextView!
     @IBOutlet weak var txtDeaths: UILabel!
     @IBOutlet weak var percent1: UILabel!
     @IBOutlet weak var assesBtn: UIButton!
     @IBOutlet weak var avoidBtn: UIButton!
-    @IBOutlet weak var info: UILabel!
     @IBOutlet weak var percent2: UILabel!
     @IBOutlet weak var txtRecovered: UILabel!
     @IBOutlet weak var txtTotal: UILabel!
@@ -32,6 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var coordinates:[CLLocation] = []
     var closest:CLLocation?
     var currentLocation:CLLocation?
+    var closestLat:CLLocationDegrees?
+    var closestLon:CLLocationDegrees?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         txtTotal.Rounded()
         txtRecovered.Rounded()
         percent1.Rounded()
-        info.Rounded()
+        info.RoundedView()
         percent2.Rounded()
         print(closest?.coordinate.latitude ?? 0)
     }
@@ -82,7 +84,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        closest = coordinates.min(by:{ $0.distance(from: currentLocation ?? CLLocation(latitude: 52.12345, longitude: 13.54321)) < $1.distance(from: currentLocation ?? CLLocation(latitude: 52.12345, longitude: 13.54321)) })
+        closest = coordinates.min(by:{ $0.distance(from: currentLocation ?? CLLocation(latitude: 0, longitude: 0)) < $1.distance(from: currentLocation ?? CLLocation(latitude: 0, longitude: 0)) })
+        let coord = closest?.coordinate
+        closestLon = coord?.longitude //Latitude & Longitude as String
+        closestLat = coord?.latitude
+        
+       
+        for global in data
+        {
+            for country in global.areas where country.lat == closestLat
+            {
+                let id = String(country.id)
+                let tc = String(country.totalConfirmed)
+                let dn = String(country.displayName)
+                let td = String(country.totalDeaths!)
+               
+                info.text = dn + "\n" + tc + "\n" + id + "\n" + td
+            }
+        }
         
     }
     

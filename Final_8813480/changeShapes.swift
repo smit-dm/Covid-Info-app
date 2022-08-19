@@ -22,4 +22,10 @@ extension UILabel{
         self.clipsToBounds = true
     }
 }
+extension UITextView{
+    func RoundedView(){
+        self.layer.cornerRadius = 8
+        self.clipsToBounds = true
+    }
+}
 

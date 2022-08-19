@@ -104,18 +104,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t6U-nP-ns4">
                                         <rect key="frame" x="37" y="564" width="330" height="135"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psa-hY-6pl">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="13n-f9-SCL">
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="135"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="135" id="BGi-Bz-SLi"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="oP6-V9-yaT"/>
+                                                    <constraint firstAttribute="height" constant="135" id="APc-8p-fce"/>
+                                                    <constraint firstAttribute="width" constant="330" id="XEG-OU-G2s"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="13n-f9-SCL" firstAttribute="leading" secondItem="t6U-nP-ns4" secondAttribute="leading" id="V49-uw-XvZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="13n-f9-SCL" secondAttribute="trailing" id="ovu-Xj-dwe"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="RN8-0B-IlO">
                                         <rect key="frame" x="39" y="709" width="326" height="100"/>
@@ -162,7 +166,7 @@
                     <connections>
                         <outlet property="assesBtn" destination="0FB-mz-pu3" id="hrr-T5-YtG"/>
                         <outlet property="avoidBtn" destination="Gx3-jx-Vvb" id="21R-ac-MX9"/>
-                        <outlet property="info" destination="Psa-hY-6pl" id="SQy-MI-4sM"/>
+                        <outlet property="info" destination="13n-f9-SCL" id="mrp-yB-WR0"/>
                         <outlet property="logo" destination="Ixg-0t-tZh" id="kDC-0E-RIu"/>
                         <outlet property="percent1" destination="9De-bY-iIu" id="toJ-64-Fus"/>
                         <outlet property="percent2" destination="Fmq-ww-BDi" id="9UE-aV-0aH"/>
@@ -228,6 +232,12 @@
     </scenes>
     <resources>
         <image name="Image-2" width="1600" height="1600"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
