@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var txtDeaths: UILabel!
     @IBOutlet weak var percent1: UILabel!
@@ -25,10 +26,20 @@ class ViewController: UIViewController {
     var data = DataLoader().userData
     var deathRatio = 0.0
     var recoveryRatio = 0.0
-    
+    var locationManager = CLLocationManager()
+    var lat = 0.0
+    var lon = 0.0
+    var coordinates:[CLLocation] = []
+    var closest:CLLocation?
+    var currentLocation:CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait }
+       
+        // After Loading the view
+       
         // Do any additional setup after loading the view.
         getData()
         logo.CircleImg()
@@ -38,11 +49,41 @@ class ViewController: UIViewController {
         percent1.Rounded()
         info.Rounded()
         percent2.Rounded()
-       
+        print(closest?.coordinate.latitude ?? 0)
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
+        if let location = locations.first {
+            locationManager.stopUpdatingLocation()
+            lat = location.coordinate.latitude
+            lon =  location.coordinate.longitude
+            currentLocation = CLLocation(latitude: lat, longitude: lon)
+            
+            
+        }
+    }
+    
+    override func loadView() {
+        super.loadView()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        closest = coordinates.min(by:{ $0.distance(from: currentLocation ?? CLLocation(latitude: 52.12345, longitude: 13.54321)) < $1.distance(from: currentLocation ?? CLLocation(latitude: 52.12345, longitude: 13.54321)) })
+        
     }
     
     
@@ -62,7 +103,23 @@ class ViewController: UIViewController {
             txtDeaths.text = "Deaths \n \(String(worldDeaths))"
             for country in global.areas
             {
-                print(country.id)
+                let tempLon = country.long ?? 0.00
+                let tempLat = country.lat ?? 0.00
+                coordinates.append(CLLocation(latitude: tempLat, longitude: tempLon))
+                
+//                if (country.lat == closest?.coordinate.latitude && country.long == closest?.coordinate.longitude) {
+//                    print(country.totalConfirmed)
+//                    print(country.totalDeaths ?? 0)
+//                    print(country.totalRecovered ?? 0)
+//                    print(country.totalRecoveredDelta ?? 0)
+//                    print(country.totalDeathsDelta ?? 0)
+//                    print(country.totalConfirmedDelta ?? 0)
+//                    print(country.lastUpdated ?? 0)
+//                    print(country.lat ?? 0)
+//                    print(country.long ?? 0)
+//                    print(country.parentID ?? 0)
+//                }
+                
             }
         }
     }
@@ -70,4 +127,37 @@ class ViewController: UIViewController {
 
    //
 }
-
+/*
+ override func viewDidLoad() {
+     super.viewDidLoad()
+      func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait }
+     
+     //Clean all fields
+     city.text = ""
+     weather.text = ""
+     temp.text = ""
+     humidity.text = ""
+     wind.text = ""
+     
+     // After Loading the view
+     locationManager.delegate = self
+     locationManager.desiredAccuracy = kCLLocationAccuracyBest
+     locationManager.requestAlwaysAuthorization()
+     locationManager.requestWhenInUseAuthorization()
+     locationManager.startUpdatingLocation()
+     backButton.isEnabled = false
+ }
+ 
+ //Function for Location
+ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+     print(locations)
+     if let location = locations.first {
+         locationManager.stopUpdatingLocation()
+         print(location.coordinate.latitude)
+         print(location.coordinate.longitude)
+         getWeatherData(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
+     }
+ }
+ 
+ 
+ */
