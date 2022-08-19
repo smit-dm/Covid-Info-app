@@ -7,9 +7,13 @@
 
 import UIKit
 import CoreLocation
+//importing Charts
+import Charts
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    //Outlets for all the lables, buttons, images, charts &textview
+    @IBOutlet weak var pieCharts: PieChartView!
     @IBOutlet weak var info: UITextView!
     @IBOutlet weak var txtDeaths: UILabel!
     @IBOutlet weak var percent1: UILabel!
@@ -20,6 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var txtTotal: UILabel!
     @IBOutlet weak var logo: UIImageView!
     
+    //Initializing Variables
     var worldTotal : Int = 0;
     var worldRecovered  : Int = 0;
     var worldDeaths : Int = 0;
@@ -37,13 +42,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait }
-       
         // After Loading the view
-       
-        // Do any additional setup after loading the view.
         getData()
+        //Changing Shapes
         logo.CircleImg()
         txtDeaths.Rounded()
         txtTotal.Rounded()
@@ -51,21 +52,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         percent1.Rounded()
         info.RoundedView()
         percent2.Rounded()
-        print(closest?.coordinate.latitude ?? 0)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    //Creating Location Manager
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
         print(locations)
         if let location = locations.first {
             locationManager.stopUpdatingLocation()
             lat = location.coordinate.latitude
             lon =  location.coordinate.longitude
             currentLocation = CLLocation(latitude: lat, longitude: lon)
-            
-            
-        }
+            }
     }
-    
+    //Getting Location from User
     override func loadView() {
         super.loadView()
         locationManager.delegate = self
@@ -74,38 +74,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-    
+    //Hiding Navigation Controller from MainPage
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        
     }
+    //Getting Closest Location and Displaying Info in the TextBox
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         closest = coordinates.min(by:{ $0.distance(from: currentLocation ?? CLLocation(latitude: 0, longitude: 0)) < $1.distance(from: currentLocation ?? CLLocation(latitude: 0, longitude: 0)) })
         let coord = closest?.coordinate
         closestLon = coord?.longitude //Latitude & Longitude as String
         closestLat = coord?.latitude
-        
-       
         for global in data
         {
             for country in global.areas where country.lat == closestLat
             {
-                let id = String(country.id)
+                let tr:String? = String(country.totalRecovered ?? 0)
                 let tc = String(country.totalConfirmed)
                 let dn = String(country.displayName)
-                let td = String(country.totalDeaths!)
-               
-                info.text = dn + "\n" + tc + "\n" + id + "\n" + td
+                let td:String? = String(country.totalDeaths ?? 0)
+               info.text = "Covid Info Near You \n Country Name   : \(dn) \n Total Confirmed: \(tc) \n Total Recovered: \(tr ?? "") \n Total Deaths   : \(td ?? "")"
             }
         }
-        
     }
-    
-    
+    //Getting Global Data & Creating a Array of CLLocation
     func getData()
     {
         for global in data
@@ -125,20 +118,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 let tempLon = country.long ?? 0.00
                 let tempLat = country.lat ?? 0.00
                 coordinates.append(CLLocation(latitude: tempLat, longitude: tempLon))
-                
-//                if (country.lat == closest?.coordinate.latitude && country.long == closest?.coordinate.longitude) {
-//                    print(country.totalConfirmed)
-//                    print(country.totalDeaths ?? 0)
-//                    print(country.totalRecovered ?? 0)
-//                    print(country.totalRecoveredDelta ?? 0)
-//                    print(country.totalDeathsDelta ?? 0)
-//                    print(country.totalConfirmedDelta ?? 0)
-//                    print(country.lastUpdated ?? 0)
-//                    print(country.lat ?? 0)
-//                    print(country.long ?? 0)
-//                    print(country.parentID ?? 0)
-//                }
-                
             }
         }
     }
@@ -146,37 +125,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
    //
 }
-/*
- override func viewDidLoad() {
-     super.viewDidLoad()
-      func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait }
-     
-     //Clean all fields
-     city.text = ""
-     weather.text = ""
-     temp.text = ""
-     humidity.text = ""
-     wind.text = ""
-     
-     // After Loading the view
-     locationManager.delegate = self
-     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-     locationManager.requestAlwaysAuthorization()
-     locationManager.requestWhenInUseAuthorization()
-     locationManager.startUpdatingLocation()
-     backButton.isEnabled = false
- }
- 
- //Function for Location
- func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-     print(locations)
-     if let location = locations.first {
-         locationManager.stopUpdatingLocation()
-         print(location.coordinate.latitude)
-         print(location.coordinate.longitude)
-         getWeatherData(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
-     }
- }
- 
- 
- */

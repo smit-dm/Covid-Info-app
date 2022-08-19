@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//Changing Shapes of the Views & Labels
 extension UIImageView{
     
     func CircleImg(){

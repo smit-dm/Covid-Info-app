@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+//Creating a Struct to get the values from the JSON file
 struct WelcomeElement: Codable {
     let id, displayName: String
     let areas: [WelcomeElement]

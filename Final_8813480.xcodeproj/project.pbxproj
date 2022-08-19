@@ -10,6 +10,8 @@
 		AB058F4F28AEF7F400EF1AF2 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB058F4E28AEF7F400EF1AF2 /* InstructionsViewController.swift */; };
 		AB058F5128AEF81100EF1AF2 /* AssesmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB058F5028AEF81100EF1AF2 /* AssesmentViewController.swift */; };
 		AB13E24D28AECB53001C3A35 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = AB13E24C28AECB53001C3A35 /* data.json */; };
+		ABA80ACC28B03A89005131D3 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = ABA80ACB28B03A89005131D3 /* Algorithms */; };
+		ABA80ACF28B03AC3005131D3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = ABA80ACE28B03AC3005131D3 /* Charts */; };
 		ABDD7CB428AED54B005857A9 /* changeShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDD7CB328AED54B005857A9 /* changeShapes.swift */; };
 		ABF8458B28AD98FD003480DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8458A28AD98FD003480DB /* AppDelegate.swift */; };
 		ABF8458D28AD98FD003480DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF8458C28AD98FD003480DB /* SceneDelegate.swift */; };
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA80ACC28B03A89005131D3 /* Algorithms in Frameworks */,
+				ABA80ACF28B03AC3005131D3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +168,10 @@
 			dependencies = (
 			);
 			name = Final_8813480;
+			packageProductDependencies = (
+				ABA80ACB28B03A89005131D3 /* Algorithms */,
+				ABA80ACE28B03AC3005131D3 /* Charts */,
+			);
 			productName = Final_8813480;
 			productReference = ABF8458728AD98FD003480DB /* Final_8813480.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +244,10 @@
 				Base,
 			);
 			mainGroup = ABF8457E28AD98FD003480DB;
+			packageReferences = (
+				ABA80ACA28B03A89005131D3 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				ABA80ACD28B03AC3005131D3 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = ABF8458828AD98FD003480DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -630,6 +642,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABA80ACA28B03A89005131D3 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		ABA80ACD28B03AC3005131D3 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABA80ACB28B03A89005131D3 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABA80ACA28B03A89005131D3 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		ABA80ACE28B03AC3005131D3 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABA80ACD28B03AC3005131D3 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ABF8459328AD98FD003480DB /* Final_8813480.xcdatamodeld */ = {

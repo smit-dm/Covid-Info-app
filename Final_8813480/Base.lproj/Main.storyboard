@@ -170,6 +170,7 @@
                         <outlet property="logo" destination="Ixg-0t-tZh" id="kDC-0E-RIu"/>
                         <outlet property="percent1" destination="9De-bY-iIu" id="toJ-64-Fus"/>
                         <outlet property="percent2" destination="Fmq-ww-BDi" id="9UE-aV-0aH"/>
+                        <outlet property="pieCharts" destination="0cR-MJ-rIK" id="uDZ-5F-shR"/>
                         <outlet property="txtDeaths" destination="7l5-Dy-WQk" id="YQe-3v-ncC"/>
                         <outlet property="txtRecovered" destination="fUH-jq-djp" id="N3p-gr-Q6C"/>
                         <outlet property="txtTotal" destination="8yA-QE-9zc" id="CY0-7U-IiG"/>
