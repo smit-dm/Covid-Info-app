@@ -67,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         totalConfirmed = [totalRecovered,totalDeath,inRecovery]
         pieCharts.layer.borderWidth = 5
         updateChartData()
-        
+        info.isEditable=false
         
     }
     

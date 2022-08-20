@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AssesmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-
+        self.title = "Self Assessment"
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*
