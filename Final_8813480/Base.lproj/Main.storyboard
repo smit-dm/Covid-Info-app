@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Final_8813480" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -211,7 +211,7 @@
                                                 </fragment>
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-4d-In6">
@@ -228,7 +228,7 @@
                                                 </fragment>
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-lo-EzP">
@@ -245,7 +245,7 @@
                                                 </fragment>
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-bS-Q3X">
@@ -262,7 +262,7 @@
                                                 </fragment>
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-c7-21D">
@@ -279,7 +279,7 @@
                                                 </fragment>
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
-                                            <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
@@ -317,7 +317,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIq-Yf-OTB">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yes / no" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIq-Yf-OTB">
                                         <rect key="frame" x="0.0" y="46" width="388" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="MJV-xH-U6T"/>
@@ -332,7 +332,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLh-Ja-whH">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yes / no" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLh-Ja-whH">
                                         <rect key="frame" x="0.0" y="138" width="388" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Nh6-oj-Oac"/>
@@ -347,7 +347,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f5w-tn-jFr">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yes / no" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f5w-tn-jFr">
                                         <rect key="frame" x="0.0" y="230" width="388" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fvl-X4-zVw"/>
@@ -362,7 +362,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNm-nS-hnu">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yes / no" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNm-nS-hnu">
                                         <rect key="frame" x="0.0" y="322" width="388" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="hEr-b8-DaJ"/>
@@ -426,9 +426,6 @@
         <image name="Image-2" width="1600" height="1600"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
