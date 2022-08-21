@@ -378,7 +378,13 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ul-as-oqS">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="49"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                            <color key="baseBackgroundColor" systemColor="secondaryLabelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="submit:" destination="Tgo-sg-eJQ" eventType="touchUpInside" id="z2a-Aq-3Ih"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -398,6 +404,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UKB-Fr-c2v"/>
+                    <connections>
+                        <outlet property="ans1" destination="hIq-Yf-OTB" id="NSJ-hH-XMI"/>
+                        <outlet property="ans2" destination="hLh-Ja-whH" id="eCJ-Va-ymP"/>
+                        <outlet property="ans3" destination="f5w-tn-jFr" id="qDx-Rr-Ha4"/>
+                        <outlet property="ans4" destination="DNm-nS-hnu" id="beL-sR-MKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eau-4e-KsZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -426,6 +438,9 @@
         <image name="Image-2" width="1600" height="1600"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -80,6 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             lat = location.coordinate.latitude
             lon =  location.coordinate.longitude
             currentLocation = CLLocation(latitude: lat, longitude: lon)
+            viewDidAppear(false)
             }
     }
     //Getting Location from User
