@@ -68,6 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         pieCharts.layer.borderWidth = 5
         updateChartData()
         info.isEditable=false
+        info.isSelectable=false
         
     }
     
